@@ -1,20 +1,54 @@
-import { ToastContainer } from 'react-toastify'; // -відповідає за відображення сповіщень у додатку.
-import 'react-toastify/dist/ReactToastify.css'; // -встановлює зовнішній вигляд сповіщень.
-import { ContactForm } from './ContactForm/ContactForm'; // - компонент форми для додавання контактів.
-import { ContactList } from './ContactList/ContactList'; // - компонент для відображення списку контактів.
-import { Filter } from './Filter/Filter'; // - компонент для фільтрації контактів.
-import { MainHeader, SecondaryHeader, Section } from './App.styled'; // - компоненти стилізованого (styled) компонента App,
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+
+import { useAuth } from 'hooks/useAuth';
+import { refreshUser } from 'redux/auth/operations';
+
+import Layout from './Layout';
+import PrivateRoute from './PrivateRoute';
+import RestrictedRoute from './RestrictedRoute';
+
+const HomePage = lazy(() => import('Pages/Home/Home'));
+const RegisterPage = lazy(() => import('Pages/Register/Register'));
+const LoginPage = lazy(() => import('Pages/Login/Login'));
+const ContactsPage = lazy(() => import('Pages/Contacts/Contacts'));
 
 export const App = () => {
-  return (
-    <Section>
-      <MainHeader>Phonebook</MainHeader>
-      <ContactForm />
-      <SecondaryHeader>Contacts</SecondaryHeader>
-      <Filter />
-      <ContactList />
-      {/* вспливаючі повідомлення */}
-      <ToastContainer position="top-center" />
-    </Section>
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/login" component={<RegisterPage />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+        <Route path="*" element={<HomePage />} />
+      </Route>
+    </Routes>
   );
 };

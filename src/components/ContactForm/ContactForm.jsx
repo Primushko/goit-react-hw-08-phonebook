@@ -1,67 +1,79 @@
-// - useDispatch - хук дозволяє викликати дії Redux ,
-// - useSelector - хук дозволяє вибирати певні частини стану зі сховища Redux.
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations'; // - дія (action) Redux-додає контакт.
-import { selectContacts } from 'redux/selectors'; // - селектор Redux - вибирає список контактів.
-import { toast } from 'react-toastify'; // - відображення сповіщень.
-import { nanoid } from '@reduxjs/toolkit'; // - функція  генерує унікальні ідентифікатори.
-// - компоненти (styled)-відповідають за форму, введення, мітку і кнопку відправки
-import { Form, Input, Label, SubmitButton } from './ContactForm.styled';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const ContactForm = () => {
-  // -ContactForm - представляє форму для додавання контактів.
+import PropTypes from 'prop-types';
+
+import { selectContactsList } from 'redux/constacts/selectors';
+import { addContact } from 'redux/constacts/operations';
+
+import { Form, Input, Label, Button, AddUserIcon } from './ContactForm.module';
+import { Notify } from 'notiflix';
+
+export const ContactForm = ({ onCloseModal }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts); // - доступ до стору
-  // -nameInputId та numberInputId - унікальні ідентифікатори для елементів введення.
-  const nameInputId = nanoid();
-  const numberInputId = nanoid();
+  const contacts = useSelector(selectContactsList);
 
-  const handleSubmit = event => {
-    event.preventDefault(); // -Запобігається перезавантаження сторінки.
-    // - Створюється об'єкт contact з введеними значеннями для поля name та number.
-    const contact = {
-      id: nanoid(),
-      name: event.currentTarget.elements.name.value,
-      number: event.currentTarget.elements.number.value,
-    };
-    // -Перевіряється, чи існує контакт з таким самим ім'ям у списку контактів.
-    const isExist = contacts.find(
-      ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
-    );
-    // -Якщо так, виводиться сповіщення про існуючий контакт.
-    if (isExist) {
-      return toast.warn(`${contact.name} is already in contacts.`);
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formName = e.target.elements.name.value;
+    const formNumber = e.target.elements.number.value;
+    if (contacts.some(({ name }) => name === formName)) {
+      return alert(`${formName} is already in contacts`);
     }
-    // -Викликається дія addContact з переданим об'єктом contact для додавання контакту до стану Redux.
-    dispatch(addContact(contact));
-    event.currentTarget.reset(); // - Форма очищається, скидаючи значення введених полів.
+
+    if (contacts.some(({ number }) => number === formNumber)) {
+      return alert(`${formNumber} is already in contacts`);
+    }
+
+    dispatch(addContact({ name: formName, number: formNumber.toString() }))
+      .unwrap()
+      .then(originalPromiseResult => {
+        Notify.success(
+          `${originalPromiseResult.name} successfully added to contacts`
+        );
+      })
+      .catch(() => {
+        Notify.failure("Sorry, something's wrong");
+      });
+
+    onCloseModal();
+    form.reset();
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Label htmlFor={nameInputId}>
+    <Form onSubmit={handleSubmit} autoComplete="off">
+      <Label>
         Name
         <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          id={nameInputId}
           required
+          placeholder="Enter name ..."
+          value={contacts.name}
         />
       </Label>
-      <Label htmlFor={numberInputId}>
+      <Label>
         Number
         <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          id={numberInputId}
-          required
+          placeholder="Enter number ..."
+          value={contacts.number}
         />
       </Label>
-      <SubmitButton type="submit">Add contact</SubmitButton>
+      <Button type="submit">
+        <AddUserIcon />
+        New contact
+      </Button>
     </Form>
   );
+};
+
+ContactForm.propTypes = {
+  onCloseModal: PropTypes.func.isRequired,
 };
