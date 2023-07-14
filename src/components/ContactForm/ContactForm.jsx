@@ -1,14 +1,12 @@
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import PropTypes from 'prop-types';
-
 import { selectContactsList } from 'redux/constacts/selectors';
 import { addContact } from 'redux/constacts/operations';
-
 import { Form, Input, Label, Button, AddUserIcon } from './ContactForm.module';
 import { Notify } from 'notiflix';
 
-export const ContactForm = ({ onCloseModal }) => {
+const ContactForm = ({ onCloseModal }) => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsList);
 
@@ -27,7 +25,7 @@ export const ContactForm = ({ onCloseModal }) => {
     }
 
     dispatch(addContact({ name: formName, number: formNumber.toString() }))
-      .unwrap()
+      // .unwrap()
       .then(originalPromiseResult => {
         Notify.success(
           `${originalPromiseResult.name} successfully added to contacts`
@@ -77,3 +75,4 @@ export const ContactForm = ({ onCloseModal }) => {
 ContactForm.propTypes = {
   onCloseModal: PropTypes.func.isRequired,
 };
+export default ContactForm;

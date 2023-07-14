@@ -5,7 +5,7 @@ import { fetchContacts } from 'redux/constacts/operations';
 import { selectError, selectIsLoading } from 'redux/constacts/selectors';
 
 import { Section } from '../../components/Section/Section';
-import { ContactForm } from '../../components/ContactForm/ContactForm';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import { Filter } from '../../components/Filter/Filter';
 import { ContactList } from '../../components/ContactList/ContactList';
 import {
