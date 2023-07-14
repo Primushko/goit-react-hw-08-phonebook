@@ -25,7 +25,7 @@ const ContactForm = ({ onCloseModal }) => {
     }
 
     dispatch(addContact({ name: formName, number: formNumber.toString() }))
-      // .unwrap()
+      .unwrap()
       .then(originalPromiseResult => {
         Notify.success(
           `${originalPromiseResult.name} successfully added to contacts`

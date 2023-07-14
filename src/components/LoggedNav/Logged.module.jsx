@@ -16,7 +16,7 @@ export const LoggedLink = styled(NavLink)`
   padding: 22px 28px;
 
   color: #ffffff;
-  background-color: #000000;
+  background-color: #0c1bed;
 
   border-radius: 14px;
 

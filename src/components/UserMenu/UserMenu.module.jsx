@@ -52,7 +52,7 @@ export const LogOutBtn = styled.button`
   padding: 18px 26px;
 
   color: #ffffff;
-  background-color: #000000;
+  background-color: #0c1bed;
 
   border: 1px solid #fabb18;
   border-radius: 14px;
