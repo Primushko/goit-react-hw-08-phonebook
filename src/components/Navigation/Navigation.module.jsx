@@ -9,9 +9,9 @@ export const Logo = styled(NavLink)`
 
   margin-right: 114px;
 
-  color: #000000;
+  color: #f1f42e;
   > span {
-    color: #fabb18;
+    color: #0c1bed;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -20,9 +20,9 @@ export const Logo = styled(NavLink)`
 
   :hover,
   :focus {
-    color: #fabb18;
+    color: #0c1bed;
     > span {
-      color: #000000;
+      color: #f1f42e;
     }
   }
 `;
@@ -50,6 +50,6 @@ export const MainNavLink = styled(NavLink)`
     font-weight: 600;
 
     color: #ffffff;
-    background-color: #000000;
+    background-color: #0c1bed;
   }
 `;

@@ -36,22 +36,22 @@ const Contacts = () => {
     <ContentPageContainer>
       <Section>
         <ContactNavWrapper>
-          <Title>Contacts</Title>
+          <Title>Контакти</Title>
           <FilterWrapper>
             <Filter />
             <Button type="button" onClick={handleOpenModal}>
               <AddUserIcon />
-              New Contact
+              Новий контакт
             </Button>
           </FilterWrapper>
         </ContactNavWrapper>
-        {isLoading && !error && <b>Request in progress</b>}
+        {isLoading && !error && <b>Запит у процесі виконання</b>}
         <ContactList />
       </Section>
       {isShowModalAddUser && (
         <Modal
           children={
-            <Section title="Add New Contact">
+            <Section title="Додайте новий контакт">
               <ContactForm onCloseModal={handleOpenModal} />
             </Section>
           }

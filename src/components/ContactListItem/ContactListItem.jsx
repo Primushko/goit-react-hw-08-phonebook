@@ -23,11 +23,11 @@ export const ContactsListItem = ({ id, name, number }) => {
       .unwrap()
       .then(originalPromiseResult => {
         Notify.success(
-          `${originalPromiseResult.name} successfully deleted from contacts`
+          `${originalPromiseResult.name} успішно видалено з контактів`
         );
       })
       .catch(() => {
-        Notify.failure("Sorry, something's wrong");
+        Notify.failure('Вибачте, щось не так.');
       });
   };
 
@@ -43,7 +43,7 @@ export const ContactsListItem = ({ id, name, number }) => {
       </ContactNumber>
       <Button onClick={() => handleDeleteContact(id)}>
         <UserDeletedIcon />
-        Delete
+        Видалити
       </Button>
     </ContactItem>
   );

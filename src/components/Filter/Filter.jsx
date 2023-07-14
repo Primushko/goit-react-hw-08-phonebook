@@ -19,7 +19,7 @@ export const Filter = () => {
       <Input
         type="text"
         name="filter"
-        placeholder="Enter contact name"
+        placeholder="Введіть контактне ім'я"
         value={filter}
         onChange={handleChangeFilter}
       />

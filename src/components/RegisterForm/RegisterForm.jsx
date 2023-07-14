@@ -21,10 +21,10 @@ const RegisterForm = () => {
     )
       .unwrap()
       .then(originalPromiseResult => {
-        Notify.success(`${originalPromiseResult.user.name} welcome!`);
+        Notify.success(`${originalPromiseResult.user.name} Ласкаво просимо!`);
       })
       .catch(() => {
-        Notify.failure("Sorry, something's wrong");
+        Notify.failure('Вибачте, щось не так');
       });
 
     form.reset();
@@ -38,8 +38,8 @@ const RegisterForm = () => {
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          placeholder="Enter name ..."
+          title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад: Adrian, Jacob Mercer, Oleh Prymushko"
+          placeholder="Введіть ім'я ..."
           required
         />
       </Label>
@@ -49,8 +49,8 @@ const RegisterForm = () => {
           type="email"
           name="email"
           pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
-          title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix. For example Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
-          placeholder="Enter email ..."
+          title="Email може містити літери, цифри, апостроф та обов'язково супроводжуватися суфіксом домену '@'. Наприклад: Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
+          placeholder="Введіть email ..."
           required
         />
       </Label>
@@ -59,14 +59,14 @@ const RegisterForm = () => {
         <Input
           type="password"
           name="password"
-          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-          title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters. For example TgeV23592, 3Greioct."
-          placeholder="Enter password ..."
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+          title="Пароль повинен містити принаймні одну цифру, одну велику та малу літеру, а також принаймні 6 або більше символів. Наприклад, TgeV23592, 3Greioct."
+          placeholder="Введіть пароль ..."
           required
         />
       </Label>
-      <Button type="submit">Register</Button>
-      <LoggedLink to="/login">Have acount? LogIn</LoggedLink>
+      <Button type="submit">Реєстрація</Button>
+      <LoggedLink to="/login">Зареєстровані? Увійдіть</LoggedLink>
     </Form>
   );
 };

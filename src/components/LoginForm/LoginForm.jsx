@@ -18,10 +18,10 @@ const LoginForm = () => {
     )
       .unwrap()
       .then(originalPromiseResult => {
-        Notify.success(`${originalPromiseResult.user.name} welcome back!`);
+        Notify.success(`${originalPromiseResult.user.name} З поверненням!`);
       })
       .catch(() => {
-        Notify.failure('Incorrect login or password');
+        Notify.failure('Неправильний логін або пароль');
       });
 
     form.reset();
@@ -35,24 +35,26 @@ const LoginForm = () => {
           type="email"
           name="email"
           pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
-          title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix. For example Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
+          title="Email може містити літери, цифри, апостроф та обов'язково супроводжуватися суфіксом домену '@'. Наприклад, Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
           required
-          placeholder="Enter email ..."
+          placeholder="Введіть email ..."
         />
       </Label>
       <Label>
-        Password
+        Пароль
         <Input
           type="password"
           name="password"
-          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-          title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters. For example TgeV23592, 3Greioct."
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+          title="Пароль повинен містити принаймні одну цифру, одну велику та малу літеру, а також принаймні 6 або більше символів. Наприклад, TgeV23592, 3Greioct."
           required
-          placeholder="Enter password ..."
+          placeholder="Введіть пароль ..."
         />
       </Label>
-      <Button type="submit">LogIn</Button>
-      <LoggedLink to="/register">Don`t have acount? Register</LoggedLink>
+      <Button type="submit">Увійдіть</Button>
+      <LoggedLink to="/register">
+        Не маєте облікового запису? Зареєструватися
+      </LoggedLink>
     </Form>
   );
 };

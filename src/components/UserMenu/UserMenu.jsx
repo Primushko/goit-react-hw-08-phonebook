@@ -24,7 +24,7 @@ const UserMenu = () => {
         <UserAvatar></UserAvatar>
       </UserWrapper>
       <LogOutBtn type="button" onClick={() => dispatch(logOut())}>
-        LogOut
+        Вийти
       </LogOutBtn>
     </UserNavigarion>
   );

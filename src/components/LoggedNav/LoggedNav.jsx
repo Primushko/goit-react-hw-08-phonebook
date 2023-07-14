@@ -4,10 +4,10 @@ const LoggedNav = () => {
   return (
     <LoggedList>
       <LoggedItem>
-        <LoggedLink to="login">LogIn</LoggedLink>
+        <LoggedLink to="login">Увійдіть</LoggedLink>
       </LoggedItem>
       <LoggedItem>
-        <LoggedLink to="register">Register</LoggedLink>
+        <LoggedLink to="register">Реєстрація</LoggedLink>
       </LoggedItem>
     </LoggedList>
   );

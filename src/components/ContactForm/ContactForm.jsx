@@ -17,22 +17,22 @@ const ContactForm = ({ onCloseModal }) => {
     const formName = e.target.elements.name.value;
     const formNumber = e.target.elements.number.value;
     if (contacts.some(({ name }) => name === formName)) {
-      return alert(`${formName} is already in contacts`);
+      return alert(`${formName} вже є у контактах`);
     }
 
     if (contacts.some(({ number }) => number === formNumber)) {
-      return alert(`${formNumber} is already in contacts`);
+      return alert(`${formNumber} вже є у контактах`);
     }
 
     dispatch(addContact({ name: formName, number: formNumber.toString() }))
       .unwrap()
       .then(originalPromiseResult => {
         Notify.success(
-          `${originalPromiseResult.name} successfully added to contacts`
+          `${originalPromiseResult.name} успішно додано до контактів`
         );
       })
       .catch(() => {
-        Notify.failure("Sorry, something's wrong");
+        Notify.failure('Вибачте, щось не так.');
       });
 
     onCloseModal();
@@ -42,31 +42,31 @@ const ContactForm = ({ onCloseModal }) => {
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
-        Name
+        Ім'я
         <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад: Adrian, Jacob Mercer, Prymushko Oleh"
           required
-          placeholder="Enter name ..."
+          placeholder="Введіть ім'я ..."
           value={contacts.name}
         />
       </Label>
       <Label>
-        Number
+        Номер
         <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          placeholder="Enter number ..."
+          title="Номер телефону повинен бути цифровим та може містити пробіли, тире, круглі дужки та починатися з +."
+          placeholder="Введіть номер ..."
           value={contacts.number}
         />
       </Label>
       <Button type="submit">
         <AddUserIcon />
-        New contact
+        Новий контакт
       </Button>
     </Form>
   );

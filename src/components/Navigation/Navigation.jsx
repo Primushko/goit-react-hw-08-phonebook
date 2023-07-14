@@ -13,13 +13,13 @@ const Navigation = () => {
   return (
     <>
       <Logo to="/">
-        Phone<span>Book.</span>
+        ТЕЛЕФОННА<span>КНИГА</span>
       </Logo>
       <MainNav>
         {isLoggedIn && (
           <MainNavList>
             <MainNavItem>
-              <MainNavLink to="/contacts">Contacts</MainNavLink>
+              <MainNavLink to="/contacts">КОНТАКТИ</MainNavLink>
             </MainNavItem>
           </MainNavList>
         )}

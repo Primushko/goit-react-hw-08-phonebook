@@ -4,7 +4,7 @@ import { ContentPageContainer } from './Home.module';
 const Home = () => {
   return (
     <ContentPageContainer>
-      <Section title="Welcome to Phone Book" />
+      <Section title="Ласкаво просимо до телефонної книги!" />
     </ContentPageContainer>
   );
 };
