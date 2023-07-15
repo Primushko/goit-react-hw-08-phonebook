@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.6be0ab30.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.8a9b5ea9.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d7120daa.js",
     "static/js/946.ac2acf90.chunk.js": "/goit-react-hw-08-phonebook/static/js/946.ac2acf90.chunk.js",
-    "static/js/20.cac447d5.chunk.js": "/goit-react-hw-08-phonebook/static/js/20.cac447d5.chunk.js",
+    "static/js/20.fcdb83cc.chunk.js": "/goit-react-hw-08-phonebook/static/js/20.fcdb83cc.chunk.js",
     "static/js/696.6c7b97dc.chunk.js": "/goit-react-hw-08-phonebook/static/js/696.6c7b97dc.chunk.js",
     "static/js/506.95e1be26.chunk.js": "/goit-react-hw-08-phonebook/static/js/506.95e1be26.chunk.js",
     "static/js/686.5f52ef6c.chunk.js": "/goit-react-hw-08-phonebook/static/js/686.5f52ef6c.chunk.js",
     "static/js/135.ca3dde16.chunk.js": "/goit-react-hw-08-phonebook/static/js/135.ca3dde16.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.6be0ab30.css.map": "/goit-react-hw-08-phonebook/static/css/main.6be0ab30.css.map",
-    "main.8a9b5ea9.js.map": "/goit-react-hw-08-phonebook/static/js/main.8a9b5ea9.js.map",
+    "main.d7120daa.js.map": "/goit-react-hw-08-phonebook/static/js/main.d7120daa.js.map",
     "946.ac2acf90.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/946.ac2acf90.chunk.js.map",
-    "20.cac447d5.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/20.cac447d5.chunk.js.map",
+    "20.fcdb83cc.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/20.fcdb83cc.chunk.js.map",
     "696.6c7b97dc.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/696.6c7b97dc.chunk.js.map",
     "506.95e1be26.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/506.95e1be26.chunk.js.map",
     "686.5f52ef6c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/686.5f52ef6c.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.6be0ab30.css",
-    "static/js/main.8a9b5ea9.js"
+    "static/js/main.d7120daa.js"
   ]
 }
