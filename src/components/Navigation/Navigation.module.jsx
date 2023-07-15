@@ -6,7 +6,6 @@ export const Logo = styled(NavLink)`
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
-
   margin-right: 114px;
 
   color: #f1f42e;
@@ -34,7 +33,6 @@ export const MainNavLink = styled(NavLink)`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-
   padding: 22px 28px;
 
   color: #000000;

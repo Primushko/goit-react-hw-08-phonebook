@@ -3,34 +3,27 @@ import { FaUser, FaPhoneAlt, FaUserMinus } from 'react-icons/fa';
 
 export const UserIcon = styled(FaUser)`
   padding: 8px;
-
   width: 20px;
   height: 20px;
 
   fill: #fabb18;
-
   border-radius: 12px;
-
   background-color: rgba(250, 187, 24, 0.1);
 `;
 
 export const PhoneIcon = styled(FaPhoneAlt)`
   padding: 8px;
-
   width: 20px;
   height: 20px;
 
   fill: #fabb18;
-
   border-radius: 12px;
-
   background-color: rgba(250, 187, 24, 0.1);
 `;
 
 export const UserDeletedIcon = styled(FaUserMinus)`
   width: 20px;
   height: 20px;
-
   fill: #fabb18;
 `;
 
@@ -41,10 +34,8 @@ export const ContactItem = styled.li`
   gap: 6px;
 
   padding: 20px 20px;
-
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.04);
-
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
 `;
 

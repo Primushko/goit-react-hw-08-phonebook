@@ -4,7 +4,6 @@ import { FaUserPlus } from 'react-icons/fa';
 export const AddUserIcon = styled(FaUserPlus)`
   width: 20px;
   height: 20px;
-
   fill: #fabb18;
 `;
 

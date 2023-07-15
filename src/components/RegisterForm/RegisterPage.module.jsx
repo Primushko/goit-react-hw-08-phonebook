@@ -69,7 +69,6 @@ export const LoggedLink = styled(NavLink)`
   color: #8f8f8f;
 
   cursor: pointer;
-
   :hover,
   :focus {
     color: #fabb18;
