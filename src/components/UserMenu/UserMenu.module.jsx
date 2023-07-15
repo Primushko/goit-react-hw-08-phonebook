@@ -22,26 +22,22 @@ export const UserName = styled.p`
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-
   text-align: right;
-
   color: #000000;
 `;
 export const UserEmail = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-
   text-align: right;
-
-  color: #8f8f8f;
+  color: #000000;
 `;
 
 export const UserAvatar = styled.div`
   width: 58px;
   height: 58px;
 
-  background-color: #efefef;
+  background-color: #f3fa39;
   border-radius: 14px;
 `;
 export const LogOutBtn = styled.button`
@@ -54,7 +50,7 @@ export const LogOutBtn = styled.button`
   color: #ffffff;
   background-color: #0c1bed;
 
-  border: 1px solid #fabb18;
+  border: 1px solid #f3fa39;
   border-radius: 14px;
 
   cursor: pointer;

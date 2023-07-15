@@ -6,7 +6,7 @@ export const UserIcon = styled(FaUser)`
   width: 20px;
   height: 20px;
 
-  fill: #fabb18;
+  fill: #000000;
   border-radius: 12px;
   background-color: rgba(250, 187, 24, 0.1);
 `;
@@ -16,7 +16,7 @@ export const PhoneIcon = styled(FaPhoneAlt)`
   width: 20px;
   height: 20px;
 
-  fill: #fabb18;
+  fill: #000000;
   border-radius: 12px;
   background-color: rgba(250, 187, 24, 0.1);
 `;
@@ -24,7 +24,7 @@ export const PhoneIcon = styled(FaPhoneAlt)`
 export const UserDeletedIcon = styled(FaUserMinus)`
   width: 20px;
   height: 20px;
-  fill: #fabb18;
+  fill: #ffffff;
 `;
 
 export const ContactItem = styled.li`
@@ -32,10 +32,10 @@ export const ContactItem = styled.li`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-
+  background: rgba(42, 140, 252, 0.5);
+  border: 1px solid #f3fa39;
   padding: 20px 20px;
   border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
 `;
 
@@ -43,7 +43,6 @@ export const ContactName = styled.p`
   display: flex;
   align-items: center;
   gap: 14px;
-
   margin: 0;
   font-weight: 500;
 `;
@@ -65,7 +64,8 @@ export const Button = styled.button`
   gap: 14px;
 
   padding: 0.563em 1em;
-  background-color: #000000;
+  color: #ffffff;
+  background-color: #0c1bed;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(250, 187, 24, 0.1);

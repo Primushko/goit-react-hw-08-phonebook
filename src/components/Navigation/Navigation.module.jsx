@@ -36,7 +36,8 @@ export const MainNavLink = styled(NavLink)`
   padding: 22px 28px;
 
   color: #000000;
-  background-color: #ffffff;
+  background: rgba(42, 140, 252, 0.5);
+  border: 1px solid #f3fa39;
   border-radius: 18px;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);

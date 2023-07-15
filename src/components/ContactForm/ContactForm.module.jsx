@@ -4,7 +4,7 @@ import { FaUserPlus } from 'react-icons/fa';
 export const AddUserIcon = styled(FaUserPlus)`
   width: 20px;
   height: 20px;
-  fill: #fabb18;
+  fill: #ffffff;
 `;
 
 export const Form = styled.form`
@@ -48,7 +48,8 @@ export const Button = styled.button`
   margin-top: 24px;
   padding: 1.063em 1.5em;
 
-  background-color: #000000;
+  color: #ffffff;
+  background-color: #0c1bed;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(250, 187, 24, 0.1);

@@ -67,7 +67,6 @@ export const Button = styled.button`
 
 export const LoggedLink = styled(NavLink)`
   margin-top: 8px;
-  // color: #8f8f8f;
 
   cursor: pointer;
 
