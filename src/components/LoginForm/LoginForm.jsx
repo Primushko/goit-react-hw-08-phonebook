@@ -34,7 +34,7 @@ const LoginForm = () => {
         <Input
           type="email"
           name="email"
-          pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
+          pattern="^[a-zA-Z0-9._%+\-'`]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
           title="Email може містити літери, цифри, апостроф та обов'язково супроводжуватися суфіксом домену '@'. Наприклад, Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
           required
           placeholder="Введіть email ..."
