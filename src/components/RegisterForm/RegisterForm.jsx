@@ -37,7 +37,7 @@ const RegisterForm = () => {
         <Input
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+([\\-\\s'][a-zA-Zа-яА-Я]+)*$"
           title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад: Adrian, Jacob Mercer, Oleh Prymushko"
           placeholder="Введіть ім'я ..."
           required
@@ -48,7 +48,7 @@ const RegisterForm = () => {
         <Input
           type="email"
           name="email"
-          pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
+          pattern="^[a-zA-Z0-9._%+\-'`]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
           title="Email може містити літери, цифри, апостроф та обов'язково супроводжуватися суфіксом домену '@'. Наприклад: Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
           placeholder="Введіть email ..."
           required
