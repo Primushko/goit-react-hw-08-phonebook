@@ -12,9 +12,10 @@ export const Input = styled.input`
   padding: 22px 36px;
 
   color: #000000;
-  background: #efefef;
+
+  background: rgba(42, 140, 252, 0.5);
+  border: 1px solid #f3fa39;
   border-radius: 18px;
-  border-style: none;
 
   :placeholder {
     color: #757575;
