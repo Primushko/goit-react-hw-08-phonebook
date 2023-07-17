@@ -16,7 +16,7 @@ const LoginForm = () => {
         password: form.elements.password.value,
       })
     )
-      // .unwrap()
+      .unwrap()
       .then(originalPromiseResult => {
         Notify.success(`${originalPromiseResult.user.name} З поверненням!`);
       })
