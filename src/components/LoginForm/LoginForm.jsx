@@ -37,9 +37,6 @@ const LoginForm = () => {
           // pattern="^[a-zA-Z0-9._%+\-'`]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
           // title="Email може містити літери, цифри, апостроф та обов'язково супроводжуватися суфіксом домену '@'. Наприклад, Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
           // required
-          // required={false}
-          // pattern={null}
-          // title={null}
           placeholder="Введіть email ..."
         />
       </Label>
@@ -51,9 +48,6 @@ const LoginForm = () => {
           // pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
           // title="Пароль повинен містити принаймні одну цифру, одну велику та малу літеру, а також принаймні 6 або більше символів. Наприклад, TgeV23592, 3Greioct."
           // required
-          // required={false}
-          // pattern={null}
-          // title={null}
           placeholder="Введіть пароль ..."
         />
       </Label>
